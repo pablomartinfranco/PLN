@@ -1,2 +1,2 @@
-# PLN
-Programacion de Lenguaje Natural
+# NLP
+Natural language processing
