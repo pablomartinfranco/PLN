@@ -130,3 +130,6 @@ dmypy.json
 
 # Folders Excluded
 /nltk_data
+/out
+/latex/auxil
+/latex/auxil/solucion.aux
