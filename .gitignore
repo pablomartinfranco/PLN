@@ -133,3 +133,4 @@ dmypy.json
 /out
 /latex/auxil
 /latex/auxil/solucion.aux
+/latex/out/sentiment_analisis.synctex.gz
