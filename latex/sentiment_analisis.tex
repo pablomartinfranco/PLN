@@ -32,7 +32,7 @@ que un lector interpreta es positivo, negativo o neutro
 dentro de un contexto financiero.
 Esta informacion tiene como finalidad ayudar a
 analizar el comportamiento de activos financieros.
-Se utilizo como muestra activos del mundo de las
+Se utilizo como muestra activos financieros del mundo de las
 criptomonedas.
 \subsection{Tecnologias}\label{subsec:tecnologias}
 Se utiliza para la realizacion del proyecto una implementacion
@@ -48,24 +48,24 @@ Vale mencionar la utilizacion de los modulos de Python fundamentales para la
 realizacion de esta practica, HappyTransformer\cite{cite_02} (modulo de python para aplicar modelos
 predictivos preentrenados)
 Newspapaper\cite{cite_03} (modulo de python para extraer y normalizar el texto de una pagina web) y
-NewsApi\cite{cite_04} (modulo de python que permite acceso a un concentrador de feeds actualizados
-de cadenas de noticias internacionales).
+NewsApi\cite{cite_04} (modulo de python que permite consultar articulos actualizados en cadenas
+de noticias de todo el mundo).
 Tambien se utilizo un modelo predictivo de tipo BERT llamado finbert\cite{cite_05}
 el cual esta preentrenado con un set de datos de valoraciones de sentimiento
 sobre noticias del mundo financiero.
 \subsection{Metodo}\label{subsec:metodo}
 Se escogen diferentes cadenas de noticias para utilizar como fuente
 para el analisis de sentimiento de textos.
-Ademas de las fuentes se escogen 20 nombres de criptomonedas de las cuales
+Ademas de las fuentes se escogen nombres de criptomonedas de las cuales
 recuperar las noticias.
 Esta informacion se utiliza para obtener los noticias por medio
-del concentrador de noticias internacionales tomando todas las noticias
+del concentrador de noticias internacionales\cite{cite_06} tomando todas las noticias
 relacionadas a partir del dia anterior hasta el momento actual.
-Estas noticias se normalizan por medio del modulo newspaper el cual utiliza
+Estas noticias se normalizan por medio del modulo newspaper\cite{cite_07} el cual utiliza
 modelos de pln para corregir la puntuacion y los simbolos o definiciones de html
 que no corresponde encontrarlos dentro del texto.
-Al texto normalizado se le aplica un modelo predictivo tipo BERT denominado finbert
-para clasificarlos en positivo, negativo, neutro.
+Al texto normalizado se le aplica un modelo predictivo tipo BERT\cite{cite_08}
+denominado finbert para clasificarlos en positivo, negativo, neutro.
 En base a estos resultados se hace un conteo de las probabilidades para
 obtener un estimado del sentimiento aproximado de cada criptomoneda.
 %\hyperlink{label1}{Click me!}.
@@ -75,7 +75,10 @@ obtener un estimado del sentimiento aproximado de cada criptomoneda.
 \bibitem{cite_01} \emph{Python3} - \url{https://www.python.org/}
 \bibitem{cite_02} \emph{Pypi module happytransformer} - \url{https://pypi.org/project/newspaper3k/}
 \bibitem{cite_03} \emph{Pypi module newspaper3k} - \url{https://pypi.org/project/newspaper3k/}
-\bibitem{cite_04} \emph{Pypi module news-api} - \url{https://pypi.org/project/news-api/}
+\bibitem{cite_04} \emph{Pypi module newsapi-python} - \url{https://pypi.org/project/newsapi-python/}
 \bibitem{cite_05} \emph{ProsusAi/finbert} - \url{https://huggingface.co/ProsusAI/finbert}
+\bibitem{cite_06} \emph{NewsApi usage} - \url{https://newsapi.org/docs/client-libraries/python}
+\bibitem{cite_07} \emph{Newspaper usage} - \url{https://newspaper.readthedocs.io/en/latest/}
+\bibitem{cite_08} \emph{HappyTransformer usage} - \url{https://happytransformer.com/text-classification/usage/}
 \end{thebibliography}
 \end{document}
