@@ -2,4 +2,4 @@
 ### Natural language processing
 
 
-[a relative link](latex/out/sentiment_analisis.pdf)
+Explicacion del proyecto: [sentiment_analisis.pdf](latex/out/sentiment_analisis.pdf)
