@@ -39,7 +39,7 @@ def process_article(article: Article) -> Digest:
     article.parse()
     article.nlp()
     text = " ".join(article.text.split()[:300])
-    ners = get_ners(text)
+    ners = ", ".join(get_ners(text))
     keywords = ", ".join(article.keywords)
     return Digest(
         url=article.url,
