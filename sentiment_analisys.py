@@ -60,7 +60,7 @@ async def process_article_async(article: Article):
 
 
 async def get_digests_async(term: str, sources: str, client: NewsApiClient,
-                            from_param=date.today() - timedelta(days=1),
+                            from_param=date.today() - timedelta(days=2),
                             language="en"):
 
     response = client.get_everything(term,
