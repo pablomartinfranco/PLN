@@ -8,6 +8,10 @@ from datetime import date, timedelta
 from newspaper import Article
 import nltk
 import asyncio
+from nltk import ne_chunk, pos_tag, word_tokenize
+from nltk.tree import Tree
+
+nltk.data.path = [str(Path().resolve().parent.joinpath("nltk_data"))]
 
 
 @dataclass(frozen=True)
@@ -17,10 +21,11 @@ class Digest:
     source: str
     authors: str
     publish_date: str
-    keywords: str
+    keywords: [str]
     summary: str
     title: str
     text: str
+    ners: [str]
 
 
 @dataclass(frozen=True)
@@ -33,6 +38,8 @@ def process_article(article: Article) -> Digest:
     article.download()
     article.parse()
     article.nlp()
+    text = " ".join(article.text.split()[:300])
+    ners = get_ners(text)
     return Digest(
         url=article.url,
         html=article.html,
@@ -42,7 +49,8 @@ def process_article(article: Article) -> Digest:
         keywords=article.keywords,
         summary=article.summary,
         title=article.title,
-        text=" ".join(article.text.split()[:300]),
+        text=text,
+        ners=ners
     )
 
 
@@ -74,10 +82,28 @@ async def get_digests_by_terms_async(terms: str, sources: str, client: NewsApiCl
 
 
 async def classify_sentiment_async(digest: Digest, classifier: HappyTextClassification):
-    return digest, await asyncio.to_thread(classifier.classify_text, digest.summary)
+    return digest, await asyncio.to_thread(classifier.classify_text, digest.text)
 
 
 async def classify_digests_async(digests: [Digest], classifier: HappyTextClassification):
     return await asyncio.gather(
         *[classify_sentiment_async(digest, classifier) for digest in digests]
     )
+
+def get_ners(text):
+    chunked = ne_chunk(pos_tag(word_tokenize(text)))
+    continuous_chunk = []
+    current_chunk = []
+    for i in chunked:
+        if type(i) == Tree:
+            current_chunk.append(" ".join([token for token, pos in i.leaves()]))
+        if current_chunk:
+            named_entity = " ".join(current_chunk)
+            if named_entity not in continuous_chunk:
+                continuous_chunk.append(named_entity)
+                current_chunk = []
+        else:
+            continue
+    return continuous_chunk
+
+
