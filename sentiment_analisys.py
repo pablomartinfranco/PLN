@@ -21,11 +21,11 @@ class Digest:
     source: str
     authors: str
     publish_date: str
-    keywords: [str]
+    keywords: str
     summary: str
     title: str
     text: str
-    ners: [str]
+    ners: str
 
 
 @dataclass(frozen=True)
@@ -40,13 +40,14 @@ def process_article(article: Article) -> Digest:
     article.nlp()
     text = " ".join(article.text.split()[:300])
     ners = get_ners(text)
+    keywords = ", ".join(article.keywords)
     return Digest(
         url=article.url,
         html=article.html,
         source=article.source_url,
         authors=article.authors,
         publish_date=article.publish_date,
-        keywords=article.keywords,
+        keywords=keywords,
         summary=article.summary,
         title=article.title,
         text=text,
