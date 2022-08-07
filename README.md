@@ -10,5 +10,5 @@
 
 [Lab2 nltk part of speech](notebooks/lab2_nltk_part_of_speech.ipynb)
 
-[Lab3 nltk sklern features vectorizer](notebooks/lab3_nltk_sklern_features_vectorizer.ipynb)
+[Lab3 nltk sklern features vectorizer](notebooks/lab3_nltk_sklearn_features_vectorizer.ipynb)
 
