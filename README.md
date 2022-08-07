@@ -4,7 +4,7 @@
 
 Explicacion del proyecto: [sentiment_analisis.pdf](latex/out/sentiment_analisis.pdf)
 
-Notebook del proyecto: [news_analisis.ipynb](notebooks/news_analisis.ipynb)
+Notebook del proyecto: [news_analysis.ipynb](notebooks/news_analysis.ipynb)
 
 Laboratorio 1: [lab1_nltk_counting_estimates.ipynb](notebooks/lab1_nltk_counting_estimates.ipynb)
 
