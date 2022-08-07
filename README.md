@@ -2,9 +2,9 @@
 ### Natural language processing
 
 
-Explicacion del proyecto: [sentiment_analisis.pdf](latex/out/sentiment_analisis.pdf)
+Explicacion del proyecto: [sentiment_analysis.pdf](latex/out/sentiment_analysis.pdf)
 
-Notebook del proyecto: [news_analysis.ipynb](notebooks/news_analysis.ipynb)
+Notebook del proyecto: [sentiment_analysis.ipynb](notebooks/sentiment_analysis.ipynb)
 
 Laboratorio 1: [lab1_nltk_counting_estimates.ipynb](notebooks/lab1_nltk_counting_estimates.ipynb)
 
