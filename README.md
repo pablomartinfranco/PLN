@@ -2,7 +2,7 @@
 ### Natural language processing
 
 
-[Explicacion del proyecto](latex/out/sentiment_analisis.pdf)
+[Descripcion del proyecto](latex/out/sentiment_analisis.pdf)
 
 [Notebook del proyecto](notebooks/sentiment_analysis.ipynb)
 
